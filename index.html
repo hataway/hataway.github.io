@@ -3,18 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Realtime poke-cal</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LZ1SXC61ZC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-LZ1SXC61ZC');
-    </script>
 </head>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <style>
@@ -23,8 +14,7 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-
+    }
     :root {
     --font-family : 'GmarketSansMedium';
     }
@@ -59,6 +49,7 @@
     }
     .mainframe1{
         display: grid;
+        min-width: 300px;
         grid-template-rows: 0.1fr 1.2fr 0.1fr 0.7fr 0.1fr;
         background-color: #FF6347;
         border-radius: 10px;
@@ -68,6 +59,7 @@
     }
     .mainframe2{
         display: grid;
+        min-width: 310px;
         grid-template-rows: 0.1fr 1.5fr 0.6fr;
         background-color: #FF6347;
         border-radius: 10px;
@@ -89,6 +81,7 @@
     }
     .mainframe3{
         display: grid;
+        min-width: 300px;
         grid-template-rows: 0.1fr 1.2fr 0.1fr 0.7fr 0.1fr;
         background-color: #FF6347;
         border-radius: 10px;
@@ -180,7 +173,6 @@
         color: #fff;
         border-radius: 5px;
         border: #333 2px solid;
- 
     }
     #tag{
         border: DodgerBlue 2px solid;
@@ -194,6 +186,107 @@
     #assault_vest_div{
         display: none;
     }
+    @media ( max-width: 480px ) {
+        header{
+            font-size: 4vw;
+        }
+        main{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+	        grid-template-rows: repeat(2, auto);
+            grid-column-gap: 1vw;
+            grid-row-gap: 1vh;
+            height: 100%;
+            grid-auto-flow: dense;
+        }
+        .blank1{
+            display: none;
+        }
+        .blank2{
+            display: none;
+        }
+        .subtitle{
+            font-size: 4vw;
+        }
+        .mainframe1{
+            min-width: 0px;
+            font-size: 2.2vw;
+        }
+        .mainframe2{
+            min-width: 0px;
+            font-size: 2vw;
+            order:2;
+            grid-column: span 2;
+        }
+        .mainframe3{
+            min-width: 0px;
+            font-size: 2vw;
+            order:1;
+        }
+        input{
+            font-size: 2vw;
+            vertical-align: middle;
+        }
+        .mainframe1 input[type=radio]+label{
+            font-size: 2vw;
+            height: 2vh;
+            width: 5vw;
+            line-height: 2.1vh;
+            vertical-align: middle;
+        }
+        .mainframe3 input[type=radio]+label{
+            font-size: 2vw;
+            height: 2vh;
+            width: 5vw;
+            line-height: 2.1vh;
+            vertical-align: middle;
+        }
+        .mainframe2 input[type=radio]+label{
+            font-size: 2vw;
+            height: 2vh;
+            width: 8vw;
+            line-height: 2.1vh;
+            vertical-align: middle;
+        }
+        #myTypeTerraDiv input[type=radio]+label{
+            font-size: 2vw;
+            height: 2vh;
+            width: 10vw;
+            line-height: 2.1vh;
+        }
+        .mainframe1 button{
+            height: 2vh;
+            width: 5vw;
+            line-height: 2.1vh;
+            border: 3vw;
+            text-align: center;
+        }
+        .mainframe3 button{
+            height: 2vh;
+            width: 5vw;
+            line-height: 2.1vh;
+            border: 3vw;
+            text-align: center;
+        }
+        .mainframe2 button{
+            height: 2vh;
+            width: 13vw;
+            line-height: 2.1vh;
+            border: 3vw;
+            text-align: center;
+            margin-bottom: 0.3vh;
+        }
+        #switch{
+            width: 18vw;
+        }
+        #tag{
+            height: 2vh;
+            width: 13vw;
+            line-height: 2.1vh;
+            border: 3vw;
+            text-align: center;
+        }
+      }
 </style>
 <body>
     <header>
@@ -202,8 +295,8 @@
         </div>
     </header>
     <main>
-        <section></section>
-        <section class = mainframe1 style=" min-width: 300px;">
+        <section class = "blank1"></section>
+        <section class = "mainframe1">
             <div></div>
             <div class = window>
                 <div class = subtitle> 
@@ -294,7 +387,7 @@
             </div>
             <div></div>
         </section>
-        <section class="mainframe2" style=" min-width: 310px;">
+        <section class="mainframe2">
             <div></div>
             <div class="window">
                 <div class="subtitle">
@@ -379,7 +472,7 @@
                 <img src="rotom.png" alt="" height="180px">
             </div> 
         </section>
-        <section class = "mainframe3" style=" min-width: 300px;">
+        <section class = "mainframe3">
             <div></div> 
             <div class="window">
                 <div class="subtitle">
@@ -447,7 +540,7 @@
                     <p>
                         내구력&nbsp
                         <input type ="text", size = "7", maxlength= "6" id ="defenseResult" value="0">
-                        <span id ="assault_vest_div"><input type ="checkbox" id ="assault_vest" name="assault_vest" value="1" display: none>돌격조끼</span>
+                        <span id ="assault_vest_div"><input type ="checkbox" id ="assault_vest" name="assault_vest" value="1" display: none>돌조</span>
                     </p>
                 </div>
             </div>
@@ -491,7 +584,7 @@
             </div>  
             <div></div> 
         </section>
-        <section></section>
+        <section class = "blank2"></section>
     </main>
     <footer>
 
