@@ -1148,7 +1148,7 @@ function multiply(i){
   document.getElementById("coefficient").value *= i;
   document.getElementById("coefficient").value /= 10;
   $('.coefficientTag').append(
-    '<button type = "button" class ="btnRemove" id ="tag">'+coefficientNum+' x</button>'
+    '<button type = "button" class ="btnRemove" id ="tag">'+coefficientNum+'</button>'
   );
   $('.btnRemove').click (function(){
     document.getElementById("coefficient").value /= coefficientNum;
