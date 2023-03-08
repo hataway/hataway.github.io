@@ -1519,6 +1519,7 @@ function switchPokemon(){
   myPokemonsReset();
   enemyPokemonsReset();
   speedReset();  
+  whatMove_func();
   autoCalculate();
 }
 
